@@ -33,6 +33,11 @@
 		Description: 'A pacman game built with HTML5 canvas',
 		PlayLink: './pacman-canvas',
 		SourceCode: 'https://github.com/fathym-arcade/pacman-canvas'
+	}, {
+		Name: 'Astray',
+		Description: 'A WebGL maze game built with Three.js and Box2dWeb.',
+		PlayLink: './astray',
+		SourceCode: 'https://github.com/fathym-arcade/astray'
 	}];
 </script>
 
