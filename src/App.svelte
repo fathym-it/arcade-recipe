@@ -43,15 +43,31 @@
 
 <main>
 	<section class="hero">
-		<h1>Fathym Arcade</h1>
+		<LayoutGrid>
+			<Cell spanDevices={{ desktop: 4, tablet: 12, phone: 12 }}>
+				<img src="https://www.fathym.com/assets/images/fathym-arcade.png" alt="Fathym Arcade" />
+			</Cell>
+			
+			<Cell spanDevices={{ desktop: 8, tablet: 12, phone: 12 }}>
+				<h1>Fathym Arcade</h1>
+
+				<h2>Thank you to all the content creators!</h2>
+
+				<h3>Star any of the source code repos of the games you love.</h3>
+
+				<p>
+					Big thanks to <a href="https://superdevresources.com/open-source-html5-games/" target="_blank">Kanishk Kunal</a> 
+					for curating a list of games that we were able to bring into the Fathym Arcade to kick us off.
+				</p>
+			</Cell>
+		</LayoutGrid>
 	
-		<img src="https://www.fathym.com/assets/images/fathym-arcade.png" alt="Fathym Arcade" />
 	</section>
 
 	<section>
 		<LayoutGrid>
 			{#each games as game, i}
-			  <Cell>
+			  <Cell span={4}>
 				<Card padded>
 					<h2 class="demo-cell">{game.Name}</h2>
 
