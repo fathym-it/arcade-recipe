@@ -1,0 +1,37 @@
+{
+  "name": "@fathym-arcade/arcade",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rollup -c",
+    "deploy": "npm version patch && npm run deploy:app",
+    "deploy:app": "npm version patch --prefix public && npm run build && npm publish ./public --access public",
+    "dev": "rollup -c -w",
+    "start": "sirv public --no-clear",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.0",
+    "@rollup/plugin-typescript": "^8.0.0",
+    "@smui/button": "^6.0.0-beta.15",
+    "@smui/card": "^6.0.0-beta.15",
+    "@smui/layout-grid": "^6.0.0-beta.15",
+    "@tsconfig/svelte": "^2.0.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "smui-theme": "^6.0.0-beta.15",
+    "svelte": "^3.0.0",
+    "svelte-check": "^2.0.0",
+    "svelte-preprocess": "^4.0.0",
+    "tslib": "^2.0.0",
+    "typescript": "^4.0.0"
+  },
+  "dependencies": {
+    "sirv-cli": "^2.0.0",
+    "svelte-material-ui": "^6.0.0-beta.15"
+  }
+}
