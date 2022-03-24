@@ -14,7 +14,7 @@ env:
   DeployCommand: npm publish --access public
   Organization: fathym-arcade
   Repository: arcade
-  Output: ./public
+  Output: ./build
 
 jobs:
   build:
