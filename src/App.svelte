@@ -134,7 +134,7 @@
 				<Cell span={4}>
 					<div class="game-card">
 						<div class="image-temp">
-							<img src={game.Img} />
+							<img src={game.Img}/>
 						</div>
 						<hr />
 						<div class="card-content">
@@ -189,7 +189,7 @@
 				future.
 			</h3>
 			<h2>But we also know how to get down.</h2>
-			<img class="office" src="images/officeDance.gif" />
+			<img class="office" src="images/officeDance.gif" alt="dancing gif"/>
 			<p>
 				That's part of the reason we brought you the Fathym Arcade. To
 				be able to go and play a bunch of fun, entertaining games for
@@ -223,14 +223,14 @@
 						<Cell span={6}>
 							<div class="micro-img">
 								<div class="img-overlay-wrap">
-									<img class="im" src="images/routes.png" />
+									<img class="im" src="images/routes.png" alt="routes example" />
 								</div>
 							</div>
 						</Cell>
 						<Cell span={6}>
 							<div class="micro-img">
 								<div class="img-overlay-wrap">
-									<img class="im" src="images/npmgit.png" />
+									<img class="im" src="images/npmgit.png"  alt="github and npm logos"/>
 								</div>
 							</div>
 						</Cell>
@@ -289,7 +289,7 @@
 	<div class="footer">
 		<hr />
 		<div class="footer-logo">
-			<img src="images/logo.svg" />
+			<img src="images/logo.svg" alt="fathym logo" />
 		</div>
 		<div>Copyright 2022 Fathym. All rights reserved</div>
 	</div>

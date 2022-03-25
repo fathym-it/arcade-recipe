@@ -1,7 +1,7 @@
 {
   "name": "@fathym-arcade/arcade",
   "version": "0.0.4",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "rollup -c",
     "deploy": "npm version patch && npm run deploy:app",
