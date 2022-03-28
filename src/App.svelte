@@ -99,7 +99,7 @@
 		rel="stylesheet"
 	/>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
 
 	<section class="hero">
 		<div class="header">
@@ -134,13 +134,13 @@
 				<Cell span={4}>
 					<div class="game-card">
 						<div class="image-temp">
-							<img src={game.Img}/>
+							<img src={game.Img} alt={`arcage image for ${game.Name}`}/>
 						</div>
 						<hr />
 						<div class="card-content">
 							<p>{game.Description}</p>
 
-							<Button href={game.PlayLink} touch variant="raised">
+							<Button href={game.PlayLink} touch variant="raised" class="smui-button">
 								<Label>Play Now</Label>
 							</Button>
 							<br />
@@ -204,7 +204,7 @@
 				Besides being fun, the Fathym Arcade is a perfect way for us to
 				show off our micro frontends architecture.
 			</p>
-			<Button href="" touch variant="raised" color="secondary">
+			<Button href="https://www.fathym.com/" touch variant="raised" color="secondary" class="smui-button"  target="_blank">
 				<Label>Get started for free</Label>
 			</Button>
 			<div>
@@ -267,6 +267,9 @@
 						> for free to Fathym today.
 					</p>
 				</div>
+				<Button href="https://www.fathym.com/" touch variant="raised" color="secondary"  target="_blank">
+					<Label>Get started for free</Label>
+				</Button>
 			</div>
 			<div class="thank">
 				<h1>Thank you to all the content creators!</h1>
@@ -342,6 +345,10 @@
 		padding-top: 50px;
 	}
 	/*GAME CARDS*/
+	:global(.smui-button) {
+		margin: 10px;
+		padding: 20px;
+	}
 	.game-card {
 		border-style: solid;
 		border-color: #00ffff;
@@ -515,10 +522,6 @@
 		padding-top: 20px;
 	}
 
-	.im {
-		/* <= optional, for responsiveness */
-	}
-
 	.footer {
 		padding-top: 50px;
 		color: darkgray;
@@ -552,6 +555,9 @@
 			width: auto;
 			height: 250px;
 		}
+		:global(.smui-button) {
+		padding: 5px;
+	}
 		/*fathym content*/
 		.copy-content {
 			width: 90%;
