@@ -1,9 +1,9 @@
 {
   "name": "@fathym-arcade/arcade",
-  "version": "0.0.1",
-	"author": {
-		"name": "Fathym"
-	},  
+  "version": "0.0.9",
+  "author": {
+    "name": "Fathym"
+  },  
   "scripts": {
     "build": "rollup -c",
     "deploy": "npm version patch && npm run deploy:app",
