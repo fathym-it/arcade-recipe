@@ -11,7 +11,7 @@ env:
   MainBranch: main
   NPMRegistry: https://registry.npmjs.org/
   InstallCommand: npm ci
-  DeployCommand: npm publish --access public
+  DeployCommand: npm run deploy
   Organization: fathym-arcade
   Repository: arcade
   Output: ./public
