@@ -6,8 +6,6 @@
   },  
   "scripts": {
     "build": "rollup -c",
-    "deploy": "npm version patch && npm run deploy:app",
-    "deploy:app": "npm version patch --prefix public && npm run build && npm publish ./public --access public",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
     "check": "svelte-check --tsconfig ./tsconfig.json"
