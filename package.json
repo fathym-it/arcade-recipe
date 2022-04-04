@@ -3,7 +3,7 @@
   "version": "0.0.9",
   "author": {
     "name": "Fathym"
-  },  
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",

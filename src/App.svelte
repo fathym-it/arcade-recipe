@@ -22,21 +22,21 @@
 			Description: `A simple, fast numbers game. Can you get it to read 2048?`,
 			PlayLink: "./2048",
 			SourceCode: "https://github.com/fathym-arcade/2048",
-			Img: "images/game-cabinet-2048.png",
+			Img: "images/2048.png",
 		},
 		{
 			Name: "Hextris",
 			Description: "Inspired by Tetris. How far can you go?",
 			PlayLink: "./hextris",
 			SourceCode: "https://github.com/fathym-arcade/hextris",
-			Img: "images/game-cabinet-hextris.png",
+			Img: "images/hextris.png",
 		},
 		{
 			Name: "Clumsy Bird",
 			Description: `Flap your wings through the obstacles...If you can!`,
 			PlayLink: "./clumsy-bird",
 			SourceCode: "https://github.com/fathym-arcade/clumsy-bird",
-			Img: "images/game-cabinet-clumsy-bird.png",
+			Img: "images/clumsybird.png",
 		},
 		{
 			Name: "Pacman Canvas",
@@ -50,7 +50,7 @@
 			Description: "Don't be led astray by this fun-styled maze game.",
 			PlayLink: "./astray",
 			SourceCode: "https://github.com/fathym-arcade/astray",
-			Img: "images/game-cabinet-astray.png",
+			Img: "images/astray.png",
 		},
 	];
 	export let columns = window.screen.width > 800 ? 3 : 1;
@@ -133,6 +133,7 @@
 			{#each games as game, i}
 				<Cell span={4}>
 					<div class="game-card">
+						<h2>{game.Name}</h2>
 						<div class="image-temp">
 							<img src={game.Img} alt={`arcage image for ${game.Name}`}/>
 						</div>
@@ -359,7 +360,12 @@
 		border-radius: 25px;
 		background-color: #221d36;
 	}
-
+	.game-card h2 {
+		text-align: center;
+		color: #ff298e;
+		font-family: "Press Start 2p";
+		padding-top: 5px;
+	}
 	.card-content {
 		height: 10vh;
 		display: flex;
@@ -376,12 +382,12 @@
 		justify-content: center;
 		align-items: center;
 		align-content: center;
-		padding-top: 20px;
 		width: 100%;
 	}
 
 	.image-temp img {
 		max-width: 50%;
+		border-radius: 25px;
 	}
 	.game-card p {
 		font-family: "Press Start 2p";
@@ -535,7 +541,7 @@
 		align-items: center;
 		align-content: center;
 		flex-direction: column;
-		padding-bottom: 20px;
+		padding-bottom: 80px;
 	}
 	.footer-logo {
 		width: 10vw;
@@ -556,7 +562,7 @@
 
 		/* GAME CARD*/
 		.image-temp img {
-			padding-top: 10px;
+			padding-top: 5px;
 			width: auto;
 			height: 250px;
 		}
