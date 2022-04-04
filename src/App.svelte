@@ -212,7 +212,7 @@
 				<div class="micro-frontends">
 					<LayoutGrid>
 						<Cell span={6}>
-							<div class="micro-text, micro-cell">
+							<div class="micro-cell">
 								<p>
 									Simply, it's the breaking down of the
 									frontend into individual, autonomous,
@@ -235,7 +235,7 @@
 							</div>
 						</Cell>
 						<Cell span={6}>
-							<div class="micro-text, micro-cell">
+							<div class="micro-cell">
 								<p>
 									We build micro frontends using code
 									repositories, specifically GitHub and NPM.
@@ -271,13 +271,15 @@
 					<Label>Get started for free</Label>
 				</Button>
 			</div>
+		</div>
+		<div class="copy-content">
 			<div class="thank">
 				<h1>Thank you to all the content creators!</h1>
-
+	
 				<h2>
 					Star any of the source code repos of the games you love.
 				</h2>
-
+	
 				<p>
 					Big thanks to <a
 						href="https://superdevresources.com/open-source-html5-games/"
@@ -289,6 +291,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="footer">
 		<hr />
 		<div class="footer-logo">
@@ -431,7 +434,10 @@
 		background-color: #221d36;
 		width: 70%;
 		border-radius: 25px;
+		padding-bottom: 100px;
+		margin-bottom: 100px;
 	}
+
 	/*MICRO FRONTEND*/
 	.micro-frontends {
 		width: 100%;
@@ -445,16 +451,26 @@
 		width: 90%;
 	}
 	.micro-img {
-		height: 20vh;
+		height:500px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
+
+	.img-overlay-wrap {
+		margin: 40px;
+		padding: 40px;
+		height: 30vh;
+		transition: transform 150ms ease-in-out;
+		background-image: url("../images/nnneon.svg");
+	}
+
 	.micro-img img {
 		height: 100%;
 		width: auto;
 	}
 	.micro-cell {
+		margin-top: 50px;
 		background-color: #030e16;
 		box-shadow: 10px 10px 8px black;
 		border-radius: 25px;
@@ -463,7 +479,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		height: 25vh;
+		height: 30vh;
 	}
 	.thank {
 		padding-top: 0px;
@@ -509,18 +525,7 @@
 			max-width: none;
 		}
 	}
-	.img-overlay-wrap {
-		margin: 40px;
-		padding: 40px;
-		height: 25vh;
-		transition: transform 150ms ease-in-out;
 
-		background-image: url("../images/nnneon.svg");
-	}
-	.micro-img {
-		height: 50%;
-		padding-top: 20px;
-	}
 
 	.footer {
 		padding-top: 50px;
