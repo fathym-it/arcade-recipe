@@ -135,13 +135,21 @@
 					<div class="game-card">
 						<h2>{game.Name}</h2>
 						<div class="image-temp">
-							<img src={game.Img} alt={`arcage image for ${game.Name}`}/>
+							<img
+								src={game.Img}
+								alt={`arcage image for ${game.Name}`}
+							/>
 						</div>
 						<hr />
 						<div class="card-content">
 							<p>{game.Description}</p>
 
-							<Button href={game.PlayLink} touch variant="raised" class="smui-button">
+							<Button
+								href={game.PlayLink}
+								touch
+								variant="raised"
+								class="smui-button"
+							>
 								<Label>Play Now</Label>
 							</Button>
 							<br />
@@ -190,7 +198,11 @@
 				future.
 			</h3>
 			<h2>But we also know how to get down.</h2>
-			<img class="office" src="images/officeDance.gif" alt="dancing gif"/>
+			<img
+				class="office"
+				src="images/officeDance.gif"
+				alt="dancing gif"
+			/>
 			<p>
 				That's part of the reason we brought you the Fathym Arcade. To
 				be able to go and play a bunch of fun, entertaining games for
@@ -205,7 +217,14 @@
 				Besides being fun, the Fathym Arcade is a perfect way for us to
 				show off our micro frontends architecture.
 			</p>
-			<Button href="https://www.fathym.com/" touch variant="raised" color="secondary" class="smui-button"  target="_blank">
+			<Button
+				href="https://www.fathym.com/"
+				touch
+				variant="raised"
+				color="secondary"
+				class="smui-button"
+				target="_blank"
+			>
 				<Label>Get started for free</Label>
 			</Button>
 			<div>
@@ -224,14 +243,22 @@
 						<Cell span={6}>
 							<div class="micro-img">
 								<div class="img-overlay-wrap">
-									<img class="im" src="images/routes.png" alt="routes example" />
+									<img
+										class="im"
+										src="images/routes.png"
+										alt="routes example"
+									/>
 								</div>
 							</div>
 						</Cell>
 						<Cell span={6}>
 							<div class="micro-img">
 								<div class="img-overlay-wrap">
-									<img class="im" src="images/npmgit.png"  alt="github and npm logos"/>
+									<img
+										class="im"
+										src="images/npmgit.png"
+										alt="github and npm logos"
+									/>
 								</div>
 							</div>
 						</Cell>
@@ -268,7 +295,13 @@
 						> for free to Fathym today.
 					</p>
 				</div>
-				<Button href="https://www.fathym.com/" touch variant="raised" color="secondary"  target="_blank">
+				<Button
+					href="https://www.fathym.com/"
+					touch
+					variant="raised"
+					color="secondary"
+					target="_blank"
+				>
 					<Label>Get started for free</Label>
 				</Button>
 			</div>
@@ -276,11 +309,11 @@
 		<div class="copy-content">
 			<div class="thank">
 				<h1>Thank you to all the content creators!</h1>
-	
+
 				<h2>
 					Star any of the source code repos of the games you love.
 				</h2>
-	
+
 				<p>
 					Big thanks to <a
 						href="https://superdevresources.com/open-source-html5-games/"
@@ -325,8 +358,8 @@
 	}
 	/*HEADER IMAGE*/
 	.imageContainer {
-		height: 20vh;
-		width: 20vh;
+		height: 18vh;
+		width: 18vh;
 	}
 
 	.hero img {
@@ -394,10 +427,16 @@
 		text-align: center;
 	}
 	.deploy {
+		cursor: pointer;
 		display: flex;
 		justify-content: center;
-		padding-bottom: 20px;
 		margin-top: -40px;
+		border-radius: 25px;
+		padding-top: 10px;
+	}
+
+	.deploy:hover {
+		background-color: #493e74;
 	}
 	.deploy-thinky {
 		width: 70px;
@@ -457,7 +496,7 @@
 		width: 90%;
 	}
 	.micro-img {
-		height:500px;
+		height: 500px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -532,7 +571,6 @@
 		}
 	}
 
-
 	.footer {
 		padding-top: 50px;
 		color: darkgray;
@@ -567,8 +605,8 @@
 			height: 250px;
 		}
 		:global(.smui-button) {
-		padding: 5px;
-	}
+			padding: 5px;
+		}
 		/*fathym content*/
 		.copy-content {
 			width: 90%;
@@ -608,7 +646,7 @@
 			align-items: center;
 			padding-top: 80px;
 			padding-bottom: 80px;
-		} 
+		}
 		.micro-img img {
 			height: 100%;
 			width: auto;
@@ -623,6 +661,12 @@
 			align-items: center;
 			flex-direction: column;
 			height: 25vh;
+		}
+	}
+	@media (min-width: 3450px) {
+		.image-temp img {
+			max-width: 10vw;
+			border-radius: 25px;
 		}
 	}
 </style>
