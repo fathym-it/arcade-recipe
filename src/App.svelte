@@ -163,12 +163,12 @@
 							</Button>
 						</div>
 						<hr />
-						<div class="deploy">
+						<!-- <div class="deploy">
 							<div class="deploy-thinky">
 								<img src="images/thinky.png" alt="thinky" />
 							</div>
 							<p>Deploy to Fathym</p>
-						</div>
+						</div> -->
 					</div>
 				</Cell>
 			{/each}
