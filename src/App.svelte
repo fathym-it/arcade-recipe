@@ -43,7 +43,7 @@
 			Description: "Eat those dots, dodge ghosts, have fun!",
 			PlayLink: "./pacman-canvas",
 			SourceCode: "https://github.com/fathym-arcade/pacman-canvas",
-			Img: "images/canvas.png",
+			Img: "images/pacman.png",
 		},
 		{
 			Name: "Astray",
@@ -137,7 +137,7 @@
 						<div class="image-temp">
 							<img
 								src={game.Img}
-								alt={`arcage image for ${game.Name}`}
+								alt={`arcade image for ${game.Name}`}
 							/>
 						</div>
 						<hr />
