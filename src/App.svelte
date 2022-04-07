@@ -43,7 +43,7 @@
 			Description: "Eat those dots, dodge ghosts, have fun!",
 			PlayLink: "./pacman-canvas",
 			SourceCode: "https://github.com/fathym-arcade/pacman-canvas",
-			Img: "images/game-cabinet-pacman-canvas.png",
+			Img: "images/canvas.png",
 		},
 		{
 			Name: "Astray",
