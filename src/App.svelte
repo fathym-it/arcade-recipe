@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Button, { Label } from "@smui/button";
-	import Icon from "@iconify/svelte";
 	import LayoutGrid, { Cell } from "@smui/layout-grid";
-	import Carousel from "svelte-carousel";
+	import { onMount } from "svelte";
+	import Carousel from "./Carousel.svelte";
+	import MobileCarousel from "./MobileCarousel.svelte";
 
 	export class Game {
 		public Description: string;
@@ -15,7 +16,12 @@
 
 		public Img: string;
 	}
-
+	let mobile = false;
+	onMount(() => {
+		if (window.screen.width < 600) {
+			mobile = true;
+		}
+	});
 	export let games: Game[] = [
 		{
 			Name: "2048",
@@ -53,8 +59,6 @@
 			Img: "images/astray.png",
 		},
 	];
-	export let columns = window.screen.width > 800 ? 3 : 1;
-	export let arrowHeight = window.screen.width > 800 ? 100 : 40;
 
 	var pattern = [
 		"ArrowUp",
@@ -111,80 +115,11 @@
 				/>
 			</div>
 		</div>
-		<Carousel
-			particlesToShow={columns}
-			particlesToScroll={1}
-			let:showPrevPage
-			let:showNextPage
-		>
-			<div
-				slot="prev"
-				on:click={showPrevPage}
-				class="custom-arrow custom-arrow-prev"
-			>
-				<Icon
-					icon="akar-icons:arrow-right-thick"
-					class="arrows"
-					color="#06df45"
-					height={arrowHeight}
-					rotate={2}
-				/>
-			</div>
-			{#each games as game, i}
-				<Cell span={4}>
-					<div class="game-card">
-						<h2>{game.Name}</h2>
-						<div class="image-temp">
-							<img
-								src={game.Img}
-								alt={`arcade image for ${game.Name}`}
-							/>
-						</div>
-						<hr />
-						<div class="card-content">
-							<p>{game.Description}</p>
-
-							<Button
-								href={game.PlayLink}
-								touch
-								variant="raised"
-								class="smui-button"
-							>
-								<Label>Play Now</Label>
-							</Button>
-							<br />
-							<Button
-								color="primary"
-								href={game.SourceCode}
-								touch
-								target="_blank"
-							>
-								<Label>View Source Code</Label>
-							</Button>
-						</div>
-						<hr />
-						<!-- <div class="deploy">
-							<div class="deploy-thinky">
-								<img src="images/thinky.png" alt="thinky" />
-							</div>
-							<p>Deploy to Fathym</p>
-						</div> -->
-					</div>
-				</Cell>
-			{/each}
-			<div
-				slot="next"
-				on:click={showNextPage}
-				class="custom-arrow custom-arrow-prev"
-			>
-				<Icon
-					icon="akar-icons:arrow-right-thick"
-					class="arrows"
-					color="#06df45"
-					height={arrowHeight}
-				/>
-			</div>
-		</Carousel>
+		{#if mobile}
+			<MobileCarousel {games} />
+		{:else}
+			<Carousel {games} />
+		{/if}
 	</section>
 
 	<div class="copy">
@@ -352,14 +287,11 @@
 		background-repeat: no-repeat;
 		background-size: cover;
 		height: 100vh;
-
-		-webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%);
-		clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
 	}
 	/*HEADER IMAGE*/
 	.imageContainer {
-		height: 18vh;
-		width: 18vh;
+		height: 20vh;
+		width: 20vh;
 	}
 
 	.hero img {
@@ -381,80 +313,10 @@
 		height: auto;
 		padding-top: 50px;
 	}
-	/*GAME CARDS*/
-	:global(.smui-button) {
-		margin: 10px;
-		padding: 20px;
-	}
-	.game-card {
-		border-style: solid;
-		border-color: #00ffff;
-		margin: 10px;
-		border-radius: 25px;
-		background-color: #221d36;
-	}
-	.game-card h2 {
-		text-align: center;
-		color: #ff298e;
-		font-family: "Press Start 2p";
-		padding-top: 5px;
-	}
-	.card-content {
-		height: 10vh;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		align-content: center;
-		margin-left: 10px;
-		margin-right: 10px;
-	}
-	.image-temp {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		align-content: center;
-		width: 100%;
-	}
-
-	.image-temp img {
-		max-width: 50%;
-		border-radius: 25px;
-	}
-	.game-card p {
-		font-family: "Press Start 2p";
-		text-align: center;
-	}
-	.deploy {
-		cursor: pointer;
-		display: flex;
-		justify-content: center;
-		margin-top: -40px;
-		border-radius: 25px;
-		padding-top: 10px;
-	}
-
-	.deploy:hover {
-		background-color: #493e74;
-	}
-	.deploy-thinky {
-		width: 70px;
-		height: 70px;
-		padding-right: 40px;
-	}
-	.custom-arrow {
-		margin: auto;
-		cursor: pointer;
-	}
-
-	a {
-		color: #ff298e;
-	}
 	/*COPY CONTENT*/
 
 	.copy {
-		padding-top: 200px;
+		padding-top: 15vh;
 		background-image: url("../images/bbburst.svg");
 		background-color: #030e16;
 		background-repeat: no-repeat;
@@ -467,7 +329,7 @@
 	}
 	.copy p {
 		font-family: "Syne", sans-serif;
-		font-size: 30px;
+		font-size: 40px;
 		width: 70%;
 		text-align: left;
 	}
@@ -481,6 +343,10 @@
 		border-radius: 25px;
 		padding-bottom: 100px;
 		margin-bottom: 100px;
+	}
+
+	a{
+		color: #ff298e;
 	}
 
 	/*MICRO FRONTEND*/
@@ -519,12 +385,13 @@
 		background-color: #030e16;
 		box-shadow: 10px 10px 8px black;
 		border-radius: 25px;
-		width: 80%;
+		min-width: 80%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		height: 30vh;
+		min-height: 30vh;
+		overflow: hidden;
 	}
 	.thank {
 		padding-top: 0px;
@@ -586,7 +453,7 @@
 	}
 
 	/*PHONE*/
-	@media (max-width: 800px) {
+	@media (max-width: 1000px) {
 		/*top logo*/
 		.imageContainer {
 			height: 10vh;
@@ -598,15 +465,10 @@
 			max-width: 450px;
 		}
 
-		/* GAME CARD*/
-		.image-temp img {
-			padding-top: 5px;
-			width: auto;
-			height: 250px;
+		.hero {
+			height: auto;
 		}
-		:global(.smui-button) {
-			padding: 5px;
-		}
+
 		/*fathym content*/
 		.copy-content {
 			width: 90%;
@@ -661,12 +523,6 @@
 			align-items: center;
 			flex-direction: column;
 			height: 25vh;
-		}
-	}
-	@media (min-width: 3450px) {
-		.image-temp img {
-			max-width: 10vw;
-			border-radius: 25px;
 		}
 	}
 </style>
