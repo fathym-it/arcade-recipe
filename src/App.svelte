@@ -290,8 +290,8 @@
 	}
 	/*HEADER IMAGE*/
 	.imageContainer {
-		height: 20vh;
-		width: 20vh;
+		height: 15vh;
+		width: 15vh;
 	}
 
 	.hero img {
@@ -311,7 +311,7 @@
 	.headImage {
 		width: 50px;
 		height: auto;
-		padding-top: 50px;
+		padding-top: 40px;
 	}
 	/*COPY CONTENT*/
 

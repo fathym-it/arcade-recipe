@@ -11,10 +11,17 @@
             alt={`arcage image for ${currentgame.Name}`}
         />
     </div>
-    <hr />
+    <hr/>
     <div class="card-content">
         <p>{currentgame.Description}</p>
-
+        <!-- <div class="deploy">
+        <div class="deploy-thinky">
+            <img src="images/thinky.png" alt="thinky" />
+        </div>
+        <p>Deploy to Fathym</p>
+    </div> -->
+    </div>
+    <div class="card-buttons">
         <Button
             href={currentgame.PlayLink}
             touch
@@ -33,43 +40,43 @@
             <Label>View Source Code</Label>
         </Button>
     </div>
-    <!-- <div class="deploy">
-        <div class="deploy-thinky">
-            <img src="images/thinky.png" alt="thinky" />
-        </div>
-        <p>Deploy to Fathym</p>
-    </div> -->
 </div>
 
 <style>
     /*GAME CARDS*/
-    :global(.smui-button) {
-        margin: 10px;
-        padding: 20px;
-    }
     .game-card {
         border-style: solid;
         border-color: #00ffff;
         margin: 10px;
         border-radius: 25px;
         background-color: #221d36;
-        height: 70vh;
+        overflow: hidden;
     }
     .game-card h2 {
         text-align: center;
         color: #ff298e;
+        font-size: 20px;
         font-family: "Press Start 2p";
         padding-top: 5px;
     }
     .card-content {
-        height: 10vh;
+        display: flex;
+        height: 15vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        margin-left: 3px;
+        margin-right: 3px;
+        overflow: hidden;
+    }
+    .card-buttons {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         align-content: center;
-        margin-left: 10px;
-        margin-right: 10px;
+        padding-bottom: 20px;
     }
     .image-temp {
         display: flex;
@@ -78,6 +85,7 @@
         align-items: center;
         align-content: center;
         width: 100%;
+        padding-bottom: 20px;
     }
 
     .image-temp img {
@@ -87,37 +95,41 @@
     .game-card p {
         font-family: "Press Start 2p";
         text-align: center;
-        font-size: 20px;
-        padding-left: 30px;
-        padding-right: 30px;
-        line-height: 30px;
+        font-size: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        line-height: 20px;
     }
 
     hr {
-		margin: 50px;
-        padding:10px;
-		border: 0;
-		border-top: 1px solid #ff298e;
-	}
+        border: 0;
+        width:70%;
+        padding-top: 10px;
+        border-top: 3px solid #ff298e;
+    }
 
     @media (max-width: 800px) {
         /* GAME CARD*/
         .image-temp img {
             padding-top: 5px;
+            padding-bottom: 0px;
         }
         :global(.smui-button) {
             padding: 5px;
         }
         .game-card {
-        height: 80vh;
+            height: 75vh;
         }
         .game-card p {
-        font-family: "Press Start 2p";
-        text-align: center;
-        font-size: 15px;
-        padding-left: 10px;
-        padding-right: 10px;
-        line-height: 20px;
-    }
+            font-family: "Press Start 2p";
+            text-align: center;
+            font-size: 15px;
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 20px;
+        }
+        hr{
+            display: none;
+        }
     }
 </style>

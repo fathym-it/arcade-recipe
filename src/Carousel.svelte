@@ -21,7 +21,7 @@
             icon="akar-icons:arrow-right-thick"
             class="arrows"
             color="#06df45"
-            height={100}
+            height={80}
             rotate={2}
         />
     </div>
@@ -39,7 +39,7 @@
             icon="akar-icons:arrow-right-thick"
             class="arrows"
             color="#06df45"
-            height={100}
+            height={80}
         />
     </div>
 </Carousel>
