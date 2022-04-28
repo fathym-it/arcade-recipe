@@ -1,20 +1,22 @@
-name: NPM - Release
+name: { { Name } }
 
 on:
   push:
-    branches: [main,feature/**]
+    branches: [{ { Branches } }]
   pull_request:
-    branches: [main,feature/**]
+    branches: [{ { Branches } }]
+
+permissions: write-all
 
 env:
-  Branches: main,feature/**
-  MainBranch: main
-  NPMRegistry: https://registry.npmjs.org/
-  InstallCommand: npm ci
-  DeployCommand: npm publish --access public
-  Organization: fathym-arcade
-  Repository: arcade
-  Output: ./public
+  Branches: { { Branches } }
+  MainBranch: { { MainBranch } }
+  NPMRegistry: { { NPMRegistry } }
+  InstallCommand: { { InstallCommand } }
+  DeployCommand: { { DeployCommand } }
+  Organization: { { Organization } }
+  Repository: { { Repository } }
+  Output: { { Output } }
 
 jobs:
   build:
