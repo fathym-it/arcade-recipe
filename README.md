@@ -3,7 +3,7 @@
 Welcome to the Fathym Arcade, a collection of open source games.
 The arcade was created using Svete and you can preview it at https://arcade.fathym.com/. Feel free to customize this arcade and host it over at Fathym.com with your own games.
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](./public/images/arcadeHome.png)
 
 ## Get started
 
