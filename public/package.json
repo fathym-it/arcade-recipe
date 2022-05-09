@@ -1,4 +1,5 @@
 {
-  "name": "@jacktest123/arcade",
-  "version": "0.0.8"
+  "name": "@fathym-arcade/arcade",
+  "version": "0.0.9",
+  "homepage": "."
 }

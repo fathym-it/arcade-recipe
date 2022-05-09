@@ -316,7 +316,7 @@
 	/*COPY CONTENT*/
 
 	.copy {
-		padding-top: 15vh;
+		padding-top: 30vh;
 		background-image: url("../images/bbburst.svg");
 		background-color: #030e16;
 		background-repeat: no-repeat;
