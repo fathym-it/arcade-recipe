@@ -6,7 +6,10 @@ on:
   pull_request:
     branches: [feature/arcadev2]
 
+permissions: write-all
+
 env:
+  CI: false
   Branches: feature/arcadev2
   MainBranch: feature/arcadev2
   NPMRegistry: https://registry.npmjs.org/
@@ -53,18 +56,6 @@ jobs:
         with:
           files: "package.json"
 
-      # bump version and push tag
-      - name: Bump version and push tag
-        id: versionBump
-        uses: fathym/github-tag-action@master
-        if: ${{ steps.package_json_exists.outputs.files_exists == 'true' }}
-        env:
-          DEFAULT_BUMP: ${{ steps.vars.outputs.versionBump }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_BRANCHES: .*
-          WITH_V: false
-      - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
-
       # replace text in package.json for main branch
       - name: replace version text for main branch
         if: ${{ steps.vars.outputs.branchName == env.MainBranch && steps.package_json_exists.outputs.files_exists == 'true' }}
@@ -106,6 +97,18 @@ jobs:
           name: ${{ github.event.organization.name }}-${{ github.event.repository.name }}
           path: ${{ env.Output }}
 
+      # bump version and push tag
+      - name: Bump version and push tag
+        id: versionBump
+        uses: fathym/github-tag-action@master
+        if: ${{ steps.package_json_exists.outputs.files_exists == 'true' }}
+        env:
+          DEFAULT_BUMP: ${{ steps.vars.outputs.versionBump }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_BRANCHES: .*
+          WITH_V: false
+      - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
+      
       # webhook to LowCodeUnit
       - name: Invoke deployment hook
         uses: fathym/workflow-webhook@v2
