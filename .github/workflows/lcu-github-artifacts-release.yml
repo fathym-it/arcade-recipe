@@ -7,7 +7,10 @@ on:
   pull_request:
     branches: [feature/arcadev2]
 
+permissions: write-all
+
 env:
+  CI: false
   Branches: feature/arcadev2
   MainBranch: feature/arcadev2
   NPMRegistry: https://registry.npmjs.org/
@@ -71,6 +74,7 @@ jobs:
           files: "package.json"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       # bump version and push tag
       - name: Bump version and push tag
         id: versionBump
@@ -85,6 +89,8 @@ jobs:
 
 =======
 >>>>>>> main
+=======
+>>>>>>> 39060b74e0d16ae10173a21bb790ecbedb6fd3ea
       # replace text in package.json for main branch
       - name: replace version text for main branch
         if: ${{ steps.vars.outputs.branchName == env.MainBranch && steps.package_json_exists.outputs.files_exists == 'true' }}
@@ -127,7 +133,10 @@ jobs:
           path: ${{ env.Output }}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 39060b74e0d16ae10173a21bb790ecbedb6fd3ea
       # bump version and push tag
       - name: Bump version and push tag
         id: versionBump
@@ -140,7 +149,10 @@ jobs:
           WITH_V: false
       - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
       
+<<<<<<< HEAD
 >>>>>>> main
+=======
+>>>>>>> 39060b74e0d16ae10173a21bb790ecbedb6fd3ea
       # webhook to LowCodeUnit
       - name: Invoke deployment hook
         uses: fathym/workflow-webhook@v2
