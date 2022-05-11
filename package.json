@@ -1,15 +1,10 @@
 {
   "name": "@fathym-arcade/arcade",
-<<<<<<< HEAD
   "version": "0.0.0",
   "homepage": ".",
   "author": {
     "name": "Fathym"
   },
-=======
-  "version": "0.0.4",
-  "private": true,
->>>>>>> main
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
