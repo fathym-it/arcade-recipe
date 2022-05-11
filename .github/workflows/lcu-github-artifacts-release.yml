@@ -2,6 +2,7 @@ name: fathym-arcade/arcade
 
 on:
   push:
+<<<<<<< HEAD
     branches: [feature/arcadev2]
   pull_request:
     branches: [feature/arcadev2]
@@ -13,6 +14,22 @@ env:
   InstallCommand: npm i
   BuildCommand: npm run build
   Output: ./public
+=======
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions: write-all
+
+env:
+  CI: false
+  Branches: main
+  MainBranch: main
+  NPMRegistry: https://registry.npmjs.org/
+  InstallCommand: npm i
+  BuildCommand: npm run build
+  Output: ./
+>>>>>>> main
 
 jobs:
   build:
@@ -53,6 +70,7 @@ jobs:
         with:
           files: "package.json"
 
+<<<<<<< HEAD
       # bump version and push tag
       - name: Bump version and push tag
         id: versionBump
@@ -65,6 +83,8 @@ jobs:
           WITH_V: false
       - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
 
+=======
+>>>>>>> main
       # replace text in package.json for main branch
       - name: replace version text for main branch
         if: ${{ steps.vars.outputs.branchName == env.MainBranch && steps.package_json_exists.outputs.files_exists == 'true' }}
@@ -106,6 +126,21 @@ jobs:
           name: ${{ github.event.organization.name }}-${{ github.event.repository.name }}
           path: ${{ env.Output }}
 
+<<<<<<< HEAD
+=======
+      # bump version and push tag
+      - name: Bump version and push tag
+        id: versionBump
+        uses: fathym/github-tag-action@master
+        if: ${{ steps.package_json_exists.outputs.files_exists == 'true' }}
+        env:
+          DEFAULT_BUMP: ${{ steps.vars.outputs.versionBump }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_BRANCHES: .*
+          WITH_V: false
+      - run: echo "New version is ${{ steps.versionBump.outputs.new_tag }}"
+      
+>>>>>>> main
       # webhook to LowCodeUnit
       - name: Invoke deployment hook
         uses: fathym/workflow-webhook@v2
